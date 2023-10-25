@@ -1,0 +1,182 @@
+ROOT_DIR: "D:/Guatemala_Client"
+INPUT_DF_ITEM: "{ROOT_DIR}/Input_Files/df_item.csv"
+INPUT_DF_RESP: "{ROOT_DIR}/Input_Files/df_resp.csv"
+INPUT_DF_MODEL: "{ROOT_DIR}/Input_Files/df_model.csv"
+INPUT_DF_MODEL_GC: "{ROOT_DIR}/Input_Files/df_model_gc.csv"
+LADDER_LOC : "{ROOT_DIR}/Input_Files/Constraint File.xlsx"
+EXCLUDED_MODEL_CATEGORY: [9]
+CALIB_GC: 2300514
+BASE_GC: 0.622384178
+SUM_RESP_WT: 2003
+SUB_SEGMENT: 0
+#Optimiser_Step_Input
+START_OPTIMIZER: True #Possible inputs - [True, False]
+VENDOR: "SKIM" #Possible inputs - ["SKIM", "KSNR"]
+MARKET: "Guatemala"
+SEGMENT: "Instore"
+CURRENCY: "GTQ"
+SUMM_FOL: "Final" #Foldername inside Outputs folder for which we are looking to generate summary
+INPUT_OPT: "{ROOT_DIR}/Input_Files/input_for_optimiser.xlsx" #This file will be starting point for optimizer
+CUSTOM_ORDER_LIST: "{ROOT_DIR}/data/raw/Item_list.csv"
+ORDER: "Elasticity" #Possible inputs - ["Default", "Revenue","Elasticity","Custom"]
+CFG_ALGO:
+  RHO:
+    R1: [-2,-1,5,4,3,2,1] #min-max
+    R2: [5,4,3,2,1] #0-max
+    R3: [-3,-2,-1,3,2,1] #-10% - +10%
+    R4: [3,2,1] #0 - +10%
+    #R5: [2,1,0.9] #0 - +15%
+  MAXITER: 45
+  METRIC: "Revenue" #Possible inputs - ["Revenue","GM"]
+  UPCHARGE:
+    AVAIL: False #Possible inputs - [True, False]
+    UPCHARGED_ITEM_ID: []
+    UPCHARGE_BASE_PRICE:
+
+LADDER_RULES:
+   ["2 < 3","0 < 9","0 < 23+15+26","25 < 26","26 < 27","28 < 29","29 < 30","6 < 30+15+26","31 < 32","33 < 34","34 < 35","36 < 37","15 < 16","16 < 17"]
+
+CFG_CONSTRAINTS:
+  1:
+    MIN_PRICE:
+    MAX_PRICE:
+    MAX_UNITS_DROP_ITEM: 1
+    MAX_UNITS_DROP: 1
+    MAX_GC_DROP:
+    MAX_WAP_HIKE:
+    DEPENDENCY: [3]
+    RHO: 1
+    ITEMS_TO_HOLD: []
+  2:
+    MIN_PRICE:
+    MAX_PRICE:
+    MAX_UNITS_DROP_ITEM: 1
+    MAX_UNITS_DROP: 0.01
+    MAX_GC_DROP:
+    MAX_WAP_HIKE:
+    OPT_CFG_MAX_GC_DROP:
+    DEPENDENCY: []
+    RHO: 1
+    ITEMS_TO_HOLD: []
+  3:
+    MIN_PRICE: 0
+    MAX_PRICE:
+    MAX_UNITS_DROP_ITEM: 1
+    MAX_UNITS_DROP: 0.01
+    MAX_GC_DROP:
+    MAX_WAP_HIKE:
+    DEPENDENCY: []
+    RHO: 2
+    ITEMS_TO_HOLD: []
+  4:
+    MIN_PRICE: 0
+    MAX_PRICE:
+    MAX_UNITS_DROP_ITEM: .1
+    MAX_UNITS_DROP: 0.01
+    MAX_GC_DROP:
+    MAX_WAP_HIKE:
+    OPT_CFG_MAX_GC_DROP:
+    DEPENDENCY: []
+    RHO: 2
+    ITEMS_TO_HOLD: []
+  5:
+    MIN_PRICE: 0.05
+    MAX_PRICE: 0.1
+    MAX_UNITS_DROP_ITEM: 0.1
+    MAX_UNITS_DROP: 0.01
+    MAX_GC_DROP:
+    MAX_WAP_HIKE:
+    DEPENDENCY: []
+    RHO: 3
+    ITEMS_TO_HOLD: []
+  6:
+    MIN_PRICE: 0
+    MAX_PRICE: 0.1
+    MAX_UNITS_DROP_ITEM: 0.15
+    MAX_UNITS_DROP: 0.01
+    MAX_GC_DROP:
+    MAX_WAP_HIKE:
+    DEPENDENCY: []
+    RHO: 5
+    ITEMS_TO_HOLD: []
+  7:
+    MIN_PRICE: 0
+    MAX_PRICE: 0.1
+    MAX_UNITS_DROP_ITEM: 0.1
+    MAX_UNITS_DROP: 0.01
+    MAX_GC_DROP:
+    MAX_WAP_HIKE:
+    DEPENDENCY: []
+    RHO: 5
+    ITEMS_TO_HOLD: []
+  8:
+    MIN_PRICE: 0
+    MAX_PRICE: 0.15
+    MAX_UNITS_DROP_ITEM: 0.1
+    MAX_UNITS_DROP: 0.01
+    MAX_GC_DROP:
+    MAX_WAP_HIKE:
+    DEPENDENCY: []
+    RHO: 6
+    ITEMS_TO_HOLD: []
+  9:
+    MIN_PRICE: 0
+    MAX_PRICE: 2000
+    MAX_UNITS_DROP_ITEM: 0.1
+    MAX_UNITS_DROP: 0.01
+    MAX_GC_DROP:
+    MAX_WAP_HIKE:
+    DEPENDENCY: []
+    RHO: 7
+    ITEMS_TO_HOLD: []
+    LIMIT_TYPE: "abs" #Possible inputs - ["abs", "per"]
+  10:
+    MIN_PRICE: 0
+    MAX_PRICE: 0.1
+    MAX_UNITS_DROP_ITEM: 0.1
+    MAX_UNITS_DROP: 0.01
+    MAX_GC_DROP:
+    MAX_WAP_HIKE:
+    DEPENDENCY: []
+    RHO: 5
+    ITEMS_TO_HOLD: []
+  11:
+    MIN_PRICE: 0
+    MAX_PRICE: 0.1
+    MAX_UNITS_DROP_ITEM: 0.1
+    MAX_UNITS_DROP: 0.01
+    MAX_GC_DROP:
+    MAX_WAP_HIKE:
+    DEPENDENCY: []
+    RHO: 5
+    ITEMS_TO_HOLD: []
+  12:
+    MIN_PRICE: 0
+    MAX_PRICE: 0.15
+    MAX_UNITS_DROP_ITEM: 0.1
+    MAX_UNITS_DROP: 0.01
+    MAX_GC_DROP:
+    MAX_WAP_HIKE:
+    DEPENDENCY: []
+    RHO: 6
+    ITEMS_TO_HOLD: []
+  13:
+    MIN_PRICE: 0
+    MAX_PRICE: 0.1
+    MAX_UNITS_DROP_ITEM: 0.1
+    MAX_UNITS_DROP: 0.01
+    MAX_GC_DROP:
+    MAX_WAP_HIKE:
+    DEPENDENCY: []
+    RHO: 5
+    ITEMS_TO_HOLD: []
+  14:
+    MIN_PRICE: 0
+    MAX_PRICE: 0.15
+    MAX_UNITS_DROP_ITEM: 0.1
+    MAX_UNITS_DROP: 0.01
+    MAX_GC_DROP:
+    MAX_WAP_HIKE:
+    DEPENDENCY: []
+    RHO: 6
+    ITEMS_TO_HOLD: []
