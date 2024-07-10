@@ -1,7 +1,7 @@
 # Price-Optimisation
 
 ### Description
-This code appears to be related to a market analysis project. It is written in Python and performs various tasks such as data preprocessing, optimization, and calculation of revenue, gross margin (GM), and other market-related metrics. The code is designed to work with a configuration file (config_skim1.yml) to read input data and set various parameters. A price optimisation and reccommandation engine was developed that successfully integrated customer behavior and csutomer sales data to a linear algorithm technique called COBYLA, to consistently generating price reccomandation for menu items for different global locations. We take in item level data which is data pertaining to each menu item of the QSR chain depending on the location we are doing the optimisation for. Different constraints are provided by the business that have to always be adhered while making price reccomanadations. 
+The code performs various tasks such as data preprocessing, optimization, and calculation of revenue, gross margin (GM), and other market-related metrics. The code is designed to work with a configuration file (config_skim1.yml) to read input data and set various parameters. A price optimisation and reccommandation engine was developed that successfully integrated customer behavior and csutomer sales data to a linear algorithm technique called COBYLA, to consistently generating price reccomandation for menu items for different global locations. We take in item level data which is data pertaining to each menu item of the QSR chain depending on the location we are doing the optimisation for. Different constraints are provided by the business that have to always be adhered while making price reccomanadations. 
 
 
 ### Dependencies
